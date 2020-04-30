@@ -4,8 +4,8 @@ sudo: false
 branches:
   only:
     - master
-addons:
-  postgresql: '10'
+# addons:
+#   postgresql: '10'
 services:
   - mysql
 cache:
@@ -21,20 +21,20 @@ before_script:
 script:
   - bin/rspec $EXTENSION/spec
 env:
-  - DB=postgresql EXTENSION=core
-  - DB=postgresql EXTENSION=dragonfly
-  - DB=postgresql EXTENSION=pages
-  - DB=postgresql EXTENSION=images
-  - DB=postgresql EXTENSION=resources
+  # - DB=postgresql EXTENSION=core
+  # - DB=postgresql EXTENSION=dragonfly
+  # - DB=postgresql EXTENSION=pages
+  # - DB=postgresql EXTENSION=images
+  # - DB=postgresql EXTENSION=resources
   - DB=mysql EXTENSION=core
   - DB=mysql EXTENSION=dragonfly
   - DB=mysql EXTENSION=pages
   - DB=mysql EXTENSION=images
   - DB=mysql EXTENSION=resources
-notifications:
-  email: true
-  webhooks:
-    - https://webhooks.gitter.im/e/b5d48907cdc89864b874
+# notifications:
+#   email: true
+#   webhooks:
+#     - https://webhooks.gitter.im/e/b5d48907cdc89864b874
 rvm:
   - 2.6
-  - 2.5
+  # - 2.5
